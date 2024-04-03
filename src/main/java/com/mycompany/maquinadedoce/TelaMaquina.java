@@ -27,6 +27,8 @@ public class TelaMaquina extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        MaquinaDeDoce MaquinaDeDoce = new MaquinaDeDoce();
+
         lbl_titulo = new javax.swing.JLabel();
         Painel_DoceA = new javax.swing.JPanel();
         img_DoceA = new javax.swing.JLabel();
@@ -40,14 +42,14 @@ public class TelaMaquina extends javax.swing.JFrame {
         img_DoceC = new javax.swing.JLabel();
         lbl_precoDoceC = new javax.swing.JLabel();
         btn_doceC = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        lbl_prefixo = new javax.swing.JLabel();
+        lbl_saldo = new javax.swing.JLabel();
+        lbl_inserir = new javax.swing.JLabel();
         btn_1_real = new javax.swing.JButton();
         btn_2_real = new javax.swing.JButton();
         btn_5_real = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        lbl_retirarSaldo = new javax.swing.JLabel();
+        btn_resgatar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Máquina de Doces");
@@ -60,11 +62,18 @@ public class TelaMaquina extends javax.swing.JFrame {
 
         img_DoceA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/maquinadedoce/balaA.png"))); // NOI18N
 
+        lbl_precoDoceA.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         lbl_precoDoceA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_precoDoceA.setText("R$ 6.00");
         lbl_precoDoceA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        btn_doceA.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         btn_doceA.setText("BOMBOM");
+        btn_doceA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_doceAActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Painel_DoceALayout = new javax.swing.GroupLayout(Painel_DoceA);
         Painel_DoceA.setLayout(Painel_DoceALayout);
@@ -87,10 +96,17 @@ public class TelaMaquina extends javax.swing.JFrame {
 
         img_DoceB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/maquinadedoce/novotrident.png"))); // NOI18N
 
+        lbl_precoDoceB.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         lbl_precoDoceB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_precoDoceB.setText("R$ 7.00");
 
+        btn_DoceB.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         btn_DoceB.setText("TRIDENT");
+        btn_DoceB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_DoceBActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Painel_DoceBLayout = new javax.swing.GroupLayout(Painel_DoceB);
         Painel_DoceB.setLayout(Painel_DoceBLayout);
@@ -118,10 +134,17 @@ public class TelaMaquina extends javax.swing.JFrame {
 
         img_DoceC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/maquinadedoce/alfajor.png"))); // NOI18N
 
+        lbl_precoDoceC.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         lbl_precoDoceC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_precoDoceC.setText("R$ 8.00");
 
+        btn_doceC.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         btn_doceC.setText("ALFAJOR");
+        btn_doceC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_doceCActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Painel_DoceCLayout = new javax.swing.GroupLayout(Painel_DoceC);
         Painel_DoceC.setLayout(Painel_DoceCLayout);
@@ -143,29 +166,53 @@ public class TelaMaquina extends javax.swing.JFrame {
                 .addComponent(btn_doceC))
         );
 
-        jLabel2.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("SALDO: R$");
+        lbl_prefixo.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        lbl_prefixo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_prefixo.setText("SALDO: R$");
 
-        jLabel3.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        jLabel3.setText("0.00");
+        lbl_saldo.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        lbl_saldo.setText(MaquinaDeDoce.getValor() + ".00");
 
-        jLabel1.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("INSERIR");
+        lbl_inserir.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        lbl_inserir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_inserir.setText("INSERIR");
 
+        btn_1_real.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         btn_1_real.setText("1 REAL");
+        btn_1_real.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_1_realActionPerformed(evt);
+            }
+        });
 
+        btn_2_real.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         btn_2_real.setText("2 REAIS");
+        btn_2_real.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_2_realActionPerformed(evt);
+            }
+        });
 
+        btn_5_real.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         btn_5_real.setText("5 REAIS");
+        btn_5_real.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_5_realActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText("RESGATAR");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lbl_retirarSaldo.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        lbl_retirarSaldo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_retirarSaldo.setText("RETIRAR SALDO");
 
-        jLabel4.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("RETIRAR SALDO");
+        btn_resgatar.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        btn_resgatar.setText("RESGATAR");
+        btn_resgatar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_resgatar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_resgatarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -185,20 +232,20 @@ public class TelaMaquina extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(71, 71, 71)
-                        .addComponent(jLabel2))
+                        .addComponent(lbl_prefixo))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btn_2_real, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btn_1_real, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btn_5_real, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(lbl_inserir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(28, Short.MAX_VALUE))
+                    .addComponent(lbl_saldo)
+                    .addComponent(btn_resgatar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbl_retirarSaldo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,29 +260,101 @@ public class TelaMaquina extends javax.swing.JFrame {
                         .addComponent(Painel_DoceA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
+                            .addComponent(lbl_prefixo)
+                            .addComponent(lbl_saldo))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                                .addComponent(lbl_inserir)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                                 .addComponent(btn_1_real)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btn_resgatar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btn_2_real, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btn_5_real)
                                 .addGap(42, 42, 42))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(70, 70, 70)
-                                .addComponent(jLabel4)
+                                .addComponent(lbl_retirarSaldo)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_doceAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_doceAActionPerformed
+        try {
+            MaquinaDeDoce MaquinaDeDoce = new MaquinaDeDoce();
+            MaquinaDeDoce.pedirDoce(6);
+            dispose();
+            TelaMaquina TelaMaquina = new TelaMaquina();
+            TelaMaquina.setVisible(true);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+    }//GEN-LAST:event_btn_doceAActionPerformed
+
+    private void btn_DoceBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DoceBActionPerformed
+        try {
+            MaquinaDeDoce MaquinaDeDoce = new MaquinaDeDoce();
+            MaquinaDeDoce.pedirDoce(7);
+            dispose();
+            TelaMaquina TelaMaquina = new TelaMaquina();
+            TelaMaquina.setVisible(true);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+    }//GEN-LAST:event_btn_DoceBActionPerformed
+
+    private void btn_doceCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_doceCActionPerformed
+        try {
+            MaquinaDeDoce MaquinaDeDoce = new MaquinaDeDoce();
+            MaquinaDeDoce.pedirDoce(8);
+            dispose();
+            TelaMaquina TelaMaquina = new TelaMaquina();
+            TelaMaquina.setVisible(true);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+    }//GEN-LAST:event_btn_doceCActionPerformed
+
+    private void btn_1_realActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_1_realActionPerformed
+        MaquinaDeDoce MaquinaDeDoce = new MaquinaDeDoce();
+        MaquinaDeDoce.somaComVerif(1);
+        dispose();
+        TelaMaquina TelaMaquina = new TelaMaquina();
+        TelaMaquina.setVisible(true);
+    }//GEN-LAST:event_btn_1_realActionPerformed
+
+    private void btn_2_realActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_2_realActionPerformed
+        MaquinaDeDoce MaquinaDeDoce = new MaquinaDeDoce();
+        MaquinaDeDoce.somaComVerif(2);
+        dispose();
+        TelaMaquina TelaMaquina = new TelaMaquina();
+        TelaMaquina.setVisible(true);
+    }//GEN-LAST:event_btn_2_realActionPerformed
+
+    private void btn_5_realActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_5_realActionPerformed
+        MaquinaDeDoce MaquinaDeDoce = new MaquinaDeDoce();
+        MaquinaDeDoce.somaComVerif(5);
+        dispose();
+        TelaMaquina TelaMaquina = new TelaMaquina();
+        TelaMaquina.setVisible(true);
+    }//GEN-LAST:event_btn_5_realActionPerformed
+
+    private void btn_resgatarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resgatarActionPerformed
+        try {
+            MaquinaDeDoce MaquinaDeDoce = new MaquinaDeDoce();
+            MaquinaDeDoce.resgatarSaldo();
+            dispose();
+            TelaMaquina TelaMaquina = new TelaMaquina();
+            TelaMaquina.setVisible(true);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+    }//GEN-LAST:event_btn_resgatarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -282,17 +401,17 @@ public class TelaMaquina extends javax.swing.JFrame {
     private javax.swing.JButton btn_DoceB;
     private javax.swing.JButton btn_doceA;
     private javax.swing.JButton btn_doceC;
+    private javax.swing.JButton btn_resgatar;
     private javax.swing.JLabel img_DoceA;
     private javax.swing.JLabel img_DoceB;
     private javax.swing.JLabel img_DoceC;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel lbl_inserir;
     private javax.swing.JLabel lbl_precoDoceA;
     private javax.swing.JLabel lbl_precoDoceB;
     private javax.swing.JLabel lbl_precoDoceC;
+    private javax.swing.JLabel lbl_prefixo;
+    private javax.swing.JLabel lbl_retirarSaldo;
+    private javax.swing.JLabel lbl_saldo;
     private javax.swing.JLabel lbl_titulo;
     // End of variables declaration//GEN-END:variables
 }
