@@ -53,6 +53,7 @@ public class TelaMaquina extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Máquina de Doces");
+        setName("jframe"); // NOI18N
 
         lbl_titulo.setFont(new java.awt.Font("Showcard Gothic", 2, 36)); // NOI18N
         lbl_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -66,6 +67,12 @@ public class TelaMaquina extends javax.swing.JFrame {
         lbl_precoDoceA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_precoDoceA.setText("R$ 6.00");
         lbl_precoDoceA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        if (MaquinaDeDoce.getValor() >= 6) {
+            btn_doceA.setBackground(new java.awt.Color(51, 255, 51));
+        } else {
+            btn_doceA.setBackground(new java.awt.Color(255, 255, 254));
+        }
 
         btn_doceA.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         btn_doceA.setText("BOMBOM");
@@ -99,6 +106,12 @@ public class TelaMaquina extends javax.swing.JFrame {
         lbl_precoDoceB.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         lbl_precoDoceB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_precoDoceB.setText("R$ 7.00");
+
+        if (MaquinaDeDoce.getValor() >= 7) {
+            btn_DoceB.setBackground(new java.awt.Color(51, 255, 51));
+        } else {
+            btn_DoceB.setBackground(new java.awt.Color(255, 255, 254));
+        }
 
         btn_DoceB.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         btn_DoceB.setText("TRIDENT");
@@ -137,6 +150,12 @@ public class TelaMaquina extends javax.swing.JFrame {
         lbl_precoDoceC.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         lbl_precoDoceC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_precoDoceC.setText("R$ 8.00");
+
+        if (MaquinaDeDoce.getValor() >= 8) {
+            btn_doceC.setBackground(new java.awt.Color(51, 255, 51));
+        } else {
+            btn_doceC.setBackground(new java.awt.Color(255, 255, 254));
+        }
 
         btn_doceC.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         btn_doceC.setText("ALFAJOR");
@@ -178,6 +197,7 @@ public class TelaMaquina extends javax.swing.JFrame {
         lbl_inserir.setText("INSERIR");
 
         btn_1_real.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        btn_1_real.setBackground(new java.awt.Color(255, 255, 254));
         btn_1_real.setText("1 REAL");
         btn_1_real.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,6 +206,7 @@ public class TelaMaquina extends javax.swing.JFrame {
         });
 
         btn_2_real.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        btn_2_real.setBackground(new java.awt.Color(255, 255, 254));
         btn_2_real.setText("2 REAIS");
         btn_2_real.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,6 +215,7 @@ public class TelaMaquina extends javax.swing.JFrame {
         });
 
         btn_5_real.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        btn_5_real.setBackground(new java.awt.Color(255, 255, 254));
         btn_5_real.setText("5 REAIS");
         btn_5_real.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,6 +228,7 @@ public class TelaMaquina extends javax.swing.JFrame {
         lbl_retirarSaldo.setText("RETIRAR SALDO");
 
         btn_resgatar.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        btn_resgatar.setBackground(new java.awt.Color(255, 255, 254));
         btn_resgatar.setText("RESGATAR");
         btn_resgatar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_resgatar.addActionListener(new java.awt.event.ActionListener() {
